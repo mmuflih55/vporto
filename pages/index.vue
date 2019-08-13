@@ -27,9 +27,6 @@ export default {
       return {posts:res.data.feed.entry}
     });
   },
-  mounted(){
-    console.log(this.posts);
-  }
 };
 </script>
 
