@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Profile />
-    <PostList :posts="posts" />
+    <!-- <PostList :posts="posts" /> -->
     <Footer />
   </div>
 </template>
@@ -21,10 +21,11 @@ export default {
     Footer
   },
   asyncData ({$axios}) {
-    // https://www.googleapis.com/blogger/v3/blogs/4606092665974021629/posts?key=AIzaSyDci4ioLXX-x0SsC88MOQk399SO0PMPR14
-    return $axios.get('https://www.blogger.com/feeds/4606092665974021629/posts/default?alt=json')
+    return $axios.get('https://www.googleapis.com/blogger/v3/blogs/4606092665974021629/posts?key=AIzaSyDci4ioLXX-x0SsC88MOQk399SO0PMPR14')
+    // return $axios.get('https://www.blogger.com/feeds/4606092665974021629/posts/default?alt=json')
     .then((res) => {
-      return {posts:res.data.feed.entry}
+      console.log(res);
+      // return {posts:res}
     });
   },
 };
