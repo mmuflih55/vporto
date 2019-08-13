@@ -8,12 +8,12 @@
           <el-card class="box-card postlist">
             <div class="plistcontent" >
                 <div>
-                  <img :src="p.media$thumbnail.url" alt="">
+                  <img class="thumbnail" :src="p.images[0].url" alt="">
                 </div>
                 <div style="padding-left:10px;">
-                  <label><b>{{p.title.$t}}</b></label>
-                  <p>By: {{p.author[0].name.$t}}</p>
-                  <p>{{new Date(p.published.$t).toDateString()}}</p>
+                  <label><b>{{p.title}}</b></label>
+                  <p>By: {{p.displayName}}</p>
+                  <p>{{new Date(p.published).toDateString()}}</p>
                 </div>
             </div>
           </el-card>
@@ -32,13 +32,21 @@ export default {
   props:['posts'],
   methods: {
     toindex(idx){
-      let id = this.posts[idx].id.$t.split('-')[2];
+      let id = this.posts[idx].id;
       this.$router.push(`/post/${id}`);
     }
+  },
+  mounted(){
+    console.log(this.posts)
   }
 };
 </script>
 <style scoped>
+.thumbnail{
+  height: 100px;
+  width: 150px;
+}
+
 .bodycon {
   height: 70vh;
   margin: 10px;

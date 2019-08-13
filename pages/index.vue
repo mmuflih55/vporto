@@ -20,11 +20,12 @@ export default {
     PostList,
     Footer
   },
-  asyncData ({$axios}) {
+  asyncData ({$axios}) {    
     // https://www.googleapis.com/blogger/v3/blogs/4606092665974021629/posts?key=AIzaSyDci4ioLXX-x0SsC88MOQk399SO0PMPR14
-    return $axios.get('https://www.blogger.com/feeds/4606092665974021629/posts/default?alt=json')
+    // return $axios.get('https://www.blogger.com/feeds/4606092665974021629/posts/default?alt=json')
+    return $axios.get('https://www.googleapis.com/blogger/v3/blogs/4606092665974021629/posts?key=AIzaSyDci4ioLXX-x0SsC88MOQk399SO0PMPR14&fetchImages=true')
     .then((res) => {
-      return {posts:res.data.feed.entry}
+      return {posts:res.data.items}
     });
   },
 };
