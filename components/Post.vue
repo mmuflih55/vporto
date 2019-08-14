@@ -42,5 +42,6 @@ export default {
 
 .labelcon{
   padding-top: 10px;
+  margin-bottom: 15px;
 }
 </style>
