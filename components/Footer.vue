@@ -8,7 +8,7 @@
     .footer{
        display: block;
        bottom: 0;
-       padding: 15px;
+       margin: 15px;
        height: 25px;
     }
 </style>

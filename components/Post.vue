@@ -1,6 +1,6 @@
 
 <template>
-  <el-col :xs="24" :md="18">
+  <el-col :xs="24" :md="19">
     <el-card class="box-card bodycon">
       <h2>{{data.title}}</h2>
       <p>{{updated}}, By: {{data.author.displayName}}</p>
